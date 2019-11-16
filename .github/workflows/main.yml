@@ -19,6 +19,5 @@ jobs:
         uses: actions/gcloud/cli@master
         with:
           args: |
-            beta functions \
-            list --project pathfinder--staging \
-            --quiet
+            beta functions list --quiet \
+            --project pathfinder--staging \
