@@ -1,12 +1,9 @@
-name: Backfill Bars Function
+name: Test1
 
-on:
-  push:
-    paths:
-      - backfill_bars/**
+on: push
 
 env:
-  FUNCTION: backfill_bars
+  TEST: test1
 
 jobs:
   deploy:
