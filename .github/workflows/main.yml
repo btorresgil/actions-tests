@@ -20,4 +20,5 @@ jobs:
         with:
           args: |
             beta functions \
-            list --project pathfinder--staging
+            list --project pathfinder--staging \
+            --quiet
