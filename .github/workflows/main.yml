@@ -27,4 +27,3 @@ jobs:
           esac
           echo $STAGE
       - run: echo $STAGE
-        working-directory: ${{ env. }}
