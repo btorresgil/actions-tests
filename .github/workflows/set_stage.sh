@@ -1,6 +1,6 @@
 #!/bin/bash
 
-case "${{ github.ref }}" in
+case "$1" in
   refs/heads/master)
     echo "::set-env name=STAGE::prod"
     echo "::set-output name=auth::test1"
