@@ -9,12 +9,16 @@ jobs:
   deploy:
     runs-on: ubuntu-latest
     steps:
-      - run: echo ${{ github.ref }}
-      - uses: actions/checkout@v1
-      - uses: btorresgil/github-actions/setup-gcloud@feature/more-flexible
-        with:
-          version: '271.0.0'
-          service_account_key: ${{ secrets.GCP_SA_KEY }}
       - run: |
-            gcloud beta functions list --quiet \
-            --project pathfinder--staging \
+          case "${{ github.ref }}" in
+            refs/heads/master)
+              STAGE=prod
+              ;;
+            refs/heads/staging)
+              STAGE=staging
+              ;;
+            *)
+              exit 1
+              ;;
+          esac
+      - run: echo $STAGE
