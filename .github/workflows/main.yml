@@ -9,6 +9,10 @@ jobs:
   deploy:
     runs-on: ubuntu-latest
     steps:
+      - run: pwd
+      - run: ls
+      - uses: actions/checkout@v1
+      - run: ls
       - run: |
           case "${{ github.ref }}" in
             refs/heads/master)
@@ -23,3 +27,4 @@ jobs:
           esac
           echo $STAGE
       - run: echo $STAGE
+        working-directory: ${{ env. }}
