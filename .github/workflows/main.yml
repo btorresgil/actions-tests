@@ -11,7 +11,7 @@ jobs:
     steps:
       - run: |
           case "${{ github.ref }}" in
-            refs/heads/maste)
+            refs/heads/master)
               STAGE=prod
               ;;
             refs/heads/staging)
@@ -21,4 +21,5 @@ jobs:
               exit 1
               ;;
           esac
+          echo $STAGE
       - run: echo $STAGE
