@@ -11,7 +11,7 @@ jobs:
     steps:
       - run: |
           case "${{ github.ref }}" in
-            refs/heads/master)
+            refs/heads/maste)
               STAGE=prod
               ;;
             refs/heads/staging)
