@@ -12,10 +12,10 @@ jobs:
       - run: |
           case "${{ github.ref }}" in
             refs/heads/master)
-              export STAGE=prod
+              echo ::set-env name=STAGE::prod
               ;;
             refs/heads/staging)
-              export STAGE=staging
+              echo ::set-env name=STAGE::staging
               ;;
             *)
               exit 1
