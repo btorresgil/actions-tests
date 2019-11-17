@@ -11,10 +11,9 @@ jobs:
     steps:
       - run: echo ${{ github.ref }}
       - uses: actions/checkout@v1
-      - uses: GoogleCloudPlatform/github-actions/setup-gcloud@master
+      - uses: btorresgil/github-actions/setup-gcloud@feature/more-flexible
         with:
-          version: '270.0.0'
-          service_account_email: ${{ secrets.GCP_SA_EMAIL }}
+          version: '271.0.0'
           service_account_key: ${{ secrets.GCP_SA_KEY }}
       - run: gcloud components install beta
       - run: |
