@@ -9,6 +9,7 @@ jobs:
   deploy:
     runs-on: ubuntu-latest
     steps:
+      - run: envsubst
       - run: pwd
       - run: ls
       - uses: actions/checkout@v1
