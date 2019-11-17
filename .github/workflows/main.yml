@@ -13,17 +13,7 @@ jobs:
       - run: ls
       - uses: actions/checkout@v1
       - run: ls
-      - run: |
-          case "${{ github.ref }}" in
-            refs/heads/master)
-              echo ::set-env name=STAGE::prod
-              ;;
-            refs/heads/staging)
-              echo ::set-env name=STAGE::staging
-              ;;
-            *)
-              exit 1
-              ;;
-          esac
-          echo $STAGE
+      - run: bash .github/workflows/set-stage.sh
+        id: stage
       - run: echo $STAGE
+      - run: echo "${{ steps.stage.auth }}"
