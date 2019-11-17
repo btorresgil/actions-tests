@@ -12,10 +12,10 @@ jobs:
       - run: |
           case "${{ github.ref }}" in
             refs/heads/master)
-              STAGE=prod
+              export STAGE=prod
               ;;
             refs/heads/staging)
-              STAGE=staging
+              export STAGE=staging
               ;;
             *)
               exit 1
