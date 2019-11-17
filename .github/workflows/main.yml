@@ -13,7 +13,7 @@ jobs:
       - run: ls
       - uses: actions/checkout@v1
       - run: ls
-      - run: bash .github/workflows/set_stage.sh
+      - run: bash .github/workflows/set_stage.sh ${{ github.ref }}
         id: stage
       - run: echo $STAGE
       - run: echo "${{ steps.stage.auth }}"
