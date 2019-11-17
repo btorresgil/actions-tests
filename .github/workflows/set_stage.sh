@@ -1,11 +1,11 @@
 #!/bin/bash
 
-case "$1" in
-  refs/heads/master)
+case "${GITHUB_REF#refs/heads/}" in
+  master)
     echo "::set-env name=STAGE::prod"
     echo "::set-output name=auth::test1"
     ;;
-  refs/heads/staging)
+  staging)
     echo "::set-env name=STAGE::staging"
     echo "::set-output name=auth::test2"
     ;;
